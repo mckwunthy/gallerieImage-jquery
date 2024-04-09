@@ -196,4 +196,63 @@ $(async function show() {
         })
     })
 
+    //start diapo
+    let idStop
+    $(".diapo").click(function (e) {
+        setWandH = {
+            ...setWandH, setWidth: 580, setHeight: 580, setDeg: 0
+        }
+
+        idStop = setInterval(() => {
+            let idItemActu = $(this).closest(".naviguate-bt").prev(".image-box-naviguate").children(".image-naviguate").children(".image").children('img').attr("id")
+            idItemActu = parseInt(idItemActu)
+            if (idItemActu != gallery.length) {
+                gallery.forEach((item) => {
+                    let idItemNext = idItemActu + 1
+                    if (item._id == idItemNext) {
+                        $(".gallery-box-naviguation .image-naviguate").html("")
+                        $(".gallery-box-naviguation .image-naviguate").append(`
+                    <div class="image"><img src="${item.imageUrl}" alt="${item.name}" id="${item._id}" style="width:${setWandH.setWidth}px;height:${setWandH.setHeight}px;transform:rotate(${setWandH.setDeg}deg)"></div>
+                    `)
+                    }
+                })
+            }
+        }, 1500);
+
+        //hide others bt
+        $(".prev-bt").toggleClass("none")
+        $(".next-bt").toggleClass("none")
+        $(".rotate-left").toggleClass("none")
+        $(".rotate-right").toggleClass("none")
+        $(".zoom-plus").toggleClass("none")
+        $(".zoom-minus").toggleClass("none")
+
+        $(".diapo-close").toggleClass("none")
+        $(".diapo").toggleClass("none")
+
+        //stop auto dans 36 sec
+        setTimeout(() => {
+            clearInterval(stop)
+        }, 36000);
+
+    })
+
+    //stop diapo
+    $(".diapo-close").click(function (e) {
+
+        if (idStop) {
+            clearInterval(idStop)
+        }
+
+        //show others bt
+        $(".prev-bt").toggleClass("none")
+        $(".next-bt").toggleClass("none")
+        $(".rotate-left").toggleClass("none")
+        $(".rotate-right").toggleClass("none")
+        $(".zoom-plus").toggleClass("none")
+        $(".zoom-minus").toggleClass("none")
+
+        $(".diapo-close").toggleClass("none")
+        $(".diapo").toggleClass("none")
+    })
 })
