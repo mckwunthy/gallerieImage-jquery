@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gallery</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<script src="/assets/js/librairie/jquery/jquery.3.7.1.js"></script>
+		<script src="/assets/js/gallery.js"></script>
+	</head>
+	<body>
+		<div id="app" class="relative">
+			<h1 class="bubblegum-sans-regular">gallery pictures</h1>
+			<div class="container">
+				<div class="gallery-box-miniature">
+					<img src="/assets/images/loading-icon.gif" alt="loading">
+				</div>
+				<div class="layout absolute none"></div>
+				<div class="gallery-box-naviguation absolute none">
+					<div class="image-box-naviguate relative ">
+						<i class="fa-solid fa-rectangle-xmark"></i>
+						<div class="image-naviguate relative">
+							<img src="/assets/images/1.jpg" alt="img 1">
+						</div>
+					</div>
+					<div class="naviguate-bt">
+						<div class="prev-next-bt">
+							<div class="prev-next-bt-title">navigate</div>
+							<div class="prev-next-bt-content">
+								<div class="prev-bt">
+									<i class="fa-solid fa-backward"></i>
+								</div>
+								<div class="next-bt">
+									<i class="fa-solid fa-forward"></i>
+								</div>
+							</div>
+						</div>
+						<div class="rotate-bt">
+							<div class="rotate-bt-title">rotate</div>
+							<div class="rotate-bt-content">
+								<div class="rotate-left">
+									<i class="fa-solid fa-arrow-rotate-left"></i>
+								</div>
+								<div class="rotate-right">
+									<i class="fa-solid fa-arrow-rotate-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="zoom-bt">
+							<div class="zoom-bt-title">zoom</div>
+							<div class="zoom-bt-content">
+								<div class="zoom-plus">
+									<i class="fa-solid fa-magnifying-glass-plus"></i>
+								</div>
+								<div class="zoom-minus">
+									<i class="fa-solid fa-magnifying-glass-minus"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
